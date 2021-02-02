@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+
+    <title>TITLE</title>
+
+  </head>
+
+  <body>
+  <form action="/recipes/<%= @recipe[:id] %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <div><label for="name">Recipe name</label><input type="text" name="name" id="name" value="<%=@recipe[:name] %> "></div>
+    <div><label for="cook-time">Cook time</label><input type="text" name="cook_time" id="cook-time" value="<%=@recipe[:cook_time] %>" ></div>
+    <div><label for="ingredients">Ingredients</label><textarea name="ingredients" id="ingredients" rows="10" cols="60"><%= @recipe[:ingredients] %></textarea></div>
+    <div><button type="submit">Update recipe</button></div>
+  </form>
+
+  </body>
+
+</html>
